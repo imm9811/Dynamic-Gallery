@@ -7,7 +7,7 @@
 
 		<!-- Website Font style -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-		
+		<title>La galeria del willy</title>
 		
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
@@ -94,9 +94,9 @@
 								<input type="checkbox" name="enabled" id="enabled">
 						</div>
 						
-					<!--	<div class="form-group">
+						<div class="form-group">
 							<div class="g-recaptcha" data-sitekey="6LeaMosUAAAAAM_ws9u6UXWNkYJlEmsrI5ChEXXH"></div>
-						</div> -->
+						</div>
 						
 
 						<div class="form-group ">

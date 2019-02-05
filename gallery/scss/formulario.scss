@@ -1,0 +1,22 @@
+
+#formulario{
+    
+    background-color: aquamarine;
+    border: thin black groove;
+    width: 500px;
+   padding-left:20%;
+   padding-right: 20%; 
+   
+   padding-top: 5%;
+   padding-bottom: 5%;
+   color: black;
+   label{
+       margin-right: 5%;
+        .fichero{
+            margin-right: 20px;
+        }
+        .texto{
+            margin-right: -20%;
+        }
+    }
+}

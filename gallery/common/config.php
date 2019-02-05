@@ -10,7 +10,11 @@ $config=array(
 	),
 );
 
+$logeado=0;
 
+function incioSesion($arrancar){
+	
+}
 
 
 

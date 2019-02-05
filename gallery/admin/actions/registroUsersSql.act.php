@@ -33,26 +33,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 		// Call the function post_captcha
-		//$response=$_POST['g-recaptcha-response'];
-		//$res = post_captcha($response);
-		/*
+		$response=$_POST['g-recaptcha-response'];
+		$res = post_captcha($response);
+		
 		if (!$res['success']) {
 			// What happens when the reCAPTCHA is not properly set up
 			echo 'reCAPTCHA error: Check to make sure your keys match the registered domain and are in the correct locations. You may also want to doublecheck your code for typos or syntax errors.';
-		} else {*/
+		} else {
 	$username= $_POST['username'];
 	$email= $_POST['email'];
 	//$password= md5($_POST['password']);
 	//$confirm= md5($_POST['confirm']);
 	
 	$pass = $_POST['password'];    
-	$passHash = password_hash($pass, PASSWORD_BCRYPT);
+	$passHash = password_hash($pass, PASSWORD_DEFAULT );
 
 	$passConfirm = $_POST['confirm'];    
-	$passHashConfirm = password_hash($passConfirm, PASSWORD_BCRYPT);
-
+	$passHashConfirm = password_hash($passConfirm, PASSWORD_DEFAULT );
 	//password_verify($pass, $passHash));
-	//password_verify($passConfirm, $passHashConfirm); && (password_verify($pass, $passHash) && password_verify($passConfirm, $passHashConfirm)==true
 
 
 		if (isset( $_POST['enabled'])) {
@@ -81,9 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 		echo "pasa";
 		//header("location: /admin/index.php?page=login");
-		//header("location: /index.php");
+		header("location: /index.php");
 	}
 	
 
-//}//fin del condicional
+}//fin del condicional
 ?>
