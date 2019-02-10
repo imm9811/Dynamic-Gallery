@@ -29,8 +29,7 @@ $contraDevuelta=$rows[0][0];
 
 Close( $connection);
 
-
-if ( empty( $rows))
+if ( empty($rows))
 {
 	echo "no hay usuario registrado";
   //header ( "location: ../error.php?error=1");
@@ -48,5 +47,8 @@ elseif(password_verify($pass,$contraDevuelta)==true)
 
 
   header ( "location: ../home.php?page=menu");
+}
+else{
+  echo "error con la contraseña, repitala por favor...";
 }
  ?>

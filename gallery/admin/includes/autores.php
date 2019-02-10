@@ -84,7 +84,7 @@ Close( $connection);
 			
 <?php
 
-
+if(!empty($rows)){
 foreach($rows as $row){
 	echo "<tr>";
 	echo "<td>".$row['id']."</td>";
@@ -96,17 +96,19 @@ foreach($rows as $row){
 
 	if($row['enabled']==1){
 					
-		echo '<td class="text-center"><a href="home.php?page=edit&enabled='.$row['enabled'].'"><span class="glyphicon glyphicon-certificate" style="color:green"></span></a></td>';
+		echo '<td class="text-center"><span class="glyphicon glyphicon-certificate" style="color:green"></span></td>';
 	} 
 	else{
-			echo '<td class="text-center"><a href="home.php?page=edit&enabled='.$row['enabled'].'"><span class="glyphicon glyphicon-certificate" style="color:red"></span></a></td>';
+			echo '<td class="text-center"><span class="glyphicon glyphicon-certificate" style="color:red"></span></td>';
 	}
-	echo '<td class="text-center"><a href="home.php?page=edit&id='.$row['id'].'"><span class="glyphicon glyphicon-pencil"></span></a></td>
+	echo '<td class="text-center"><a href="home.php?page=editarAutores&id='.$row['id'].'"><span class="glyphicon glyphicon-pencil"></span></a></td>
 					<td class="text-center" ><a href="#" OnClick="delete_post('.$row['id'].')"><span class="glyphicon glyphicon-remove" style:"color:red"></span></a></td>
 					</tr>
 					'; 
-	
-		
+	}//fin del row enabled
+}
+else{
+	echo "<td>No hay registros<td>";
 }
 echo "</tr>";
 ?>
@@ -114,6 +116,12 @@ echo "</tr>";
 		</tbody>
 	</table>
 </div>
-
+  <!-- Footer -->
+  <footer class="py-5 bg-dark" style="bottom:0px">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018; Made by Ismael</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 </body>
 </html>

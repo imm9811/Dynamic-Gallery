@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 //nos devuelve la ruta en la que estamos, nos da el directorion y lo enlazamos a la raiz
 //echo dirname( dirname(dirname(__FILE__))). "<br>";
 
@@ -32,14 +32,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
-		// Call the function post_captcha
-		$response=$_POST['g-recaptcha-response'];
-		$res = post_captcha($response);
+		// // Call the function post_captcha
+		// $response=$_POST['g-recaptcha-response'];
+		// $res = post_captcha($response);
 		
-		if (!$res['success']) {
-			// What happens when the reCAPTCHA is not properly set up
-			echo 'reCAPTCHA error: Check to make sure your keys match the registered domain and are in the correct locations. You may also want to doublecheck your code for typos or syntax errors.';
-		} else {
+		// if (!$res['success']) {
+		// 	// What happens when the reCAPTCHA is not properly set up
+		// 	echo 'reCAPTCHA error: Check to make sure your keys match the registered domain and are in the correct locations. You may also want to doublecheck your code for typos or syntax errors.';
+		// } else {ç
+		$pagemistake=$_GET['error'];
+		echo $pagemistake;	
 	$username= $_POST['username'];
 	$email= $_POST['email'];
 	//$password= md5($_POST['password']);
@@ -51,37 +53,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$passConfirm = $_POST['confirm'];    
 	$passHashConfirm = password_hash($passConfirm, PASSWORD_DEFAULT );
 	//password_verify($pass, $passHash));
-
+//$pass==$passConfirm ;
 
 		if (isset( $_POST['enabled'])) {
-			if ($pass==$passConfirm && password_verify($pass, $passHash) && password_verify($passConfirm, $passHashConfirm)) {
+			if ( $pass==$passConfirm && password_verify($pass, $passHash) && password_verify($passConfirm, $passHashConfirm) ) {
 				$enabled=1;
 				echo ("correcto");
-			}
+			} 
 			
 		}else
 			{
 				$enabled=0;
+				?>
+		<script>
+			
+			function cargar(){
+				setTimeout(() => {
+					<?php
+					//	header("location:registro.php");
+				//	echo "password mal";
+					?>
+					alert("hola a todos");
+				}, 2000);
+			}
+
+			
+			document.addEventListener("load",cargar,false);
+
+
+			</script>
+		<?php
 			}
 	
-	if( !isset($username) || !isset($email) || !isset($pass) || !isset($passConfirm) ){
+	if( (!isset($username) || !isset($email) || !isset($pass) || !isset($passConfirm)) )
+	{
 		echo "no ha introducido ninguna valor";
-		header("location:registro.php");
-	}else
-		{
+		
+	}
+	else
+	{
 		
 	
 		$connection=Connect($config['database']);
 		$sql="insert into authors(name,email,password,enabled) values('".$username."','".$email."','".$passHash."',".$enabled.")";
-		$return = Execute($sql,$connection);
-		debug($return);
-		Close($connection);
-	
-		echo "pasa";
-		//header("location: /admin/index.php?page=login");
-		header("location: /index.php");
+	//	$return = Execute($sql,$connection);
+	//	debug($return);
+	//	Close($connection);
+		
+	//	header("location: /index.php");
 	}
 	
 
-}//fin del condicional
+//}
+//fin del condicional
 ?>

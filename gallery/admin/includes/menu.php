@@ -11,7 +11,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../../css/thumbnail-gallery.css" rel="stylesheet">
-   
 
 </head>
 
@@ -19,13 +18,16 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top my-0">
       <div class="container">
         <a class="navbar-brand" href="/index.php">Galeria de Imagenes</a>
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto text-right">
            
+          <li class="nav-item">
+              <a class="nav-link" href="/index.php">Home</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="home.php?page=listado">Listado</a>
             </li>
@@ -42,6 +44,7 @@
 
   <br>
 
+  
     <!-- Bootstrap core JavaScript -->
    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

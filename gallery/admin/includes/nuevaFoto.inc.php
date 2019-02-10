@@ -8,14 +8,15 @@
   $connection = Connect( $config['database']);
   $sql  = "select * from authors order by name asc";
   $rows = ExecuteQuery( $sql, $connection);
+Close($connection);
+
 ?>
 <link rel="stylesheet" href="../../css/formulario.css">
-
 
 <div class="container-fluid mt-4 text-dark">
 <div class="row">
     <div class="col-sm-6 offset-sm-3 text-center p-4 rounded">
-        <div class="container">
+        <div class="container" style="padding:-30px">
             <h2 class="text-dark text-left">Subir foto</h2>
             <br>
             <div class="row">
@@ -69,8 +70,17 @@
 
                     </form>
                 </div>
-            </div>
+            </div> <br>
+            <br>
+    <br>
+    <br> 
         </div>
     </div>
 </div>
-</div>
+</div>  <!-- Footer -->
+    <footer class="py-5 bg-dark" style="bottom:5px">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018; Made by Ismael</p>
+      </div>
+      <!-- /.container -->
+    </footer>

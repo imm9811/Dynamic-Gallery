@@ -14,8 +14,9 @@
 	$page=$_GET["page"];
 	switch($page){
 		case 'listado';
-			include 'actions/listadoSql.act.php';
-			include 'includes/listado.php';
+		include 'actions/listadoSql.act.php';
+		
+		include 'includes/listado.php';
 			break;
 		case 'autores':
 			include 'includes/autores.php';
@@ -26,8 +27,8 @@
 		case 'editarFoto':
 			include 'includes/editarFoto.php';
 			break;
-			case 'editarUser':
-			include 'includes/editarUser.php';
+			case 'editarAutores':
+			include 'includes/editarAutores.php';
 			break;
 	}
 ?>

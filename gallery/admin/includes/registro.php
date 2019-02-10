@@ -14,7 +14,12 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-		<link rel="stylesheet" href="../../../ASSESTS/registro.css">
+		<link rel="stylesheet" href="/ASSESTS/registro.css">
+		<style>
+		.main-center{
+			width:120%;
+		}
+		</style>
 		<script>
     function onSubmit(token) {
         document.getElementById("i-recaptcha").submit();
@@ -94,9 +99,10 @@
 								<input type="checkbox" name="enabled" id="enabled">
 						</div>
 						
+						<!--<div class="form-group">
 						<div class="form-group">
 							<div class="g-recaptcha" data-sitekey="6LeaMosUAAAAAM_ws9u6UXWNkYJlEmsrI5ChEXXH"></div>
-						</div>
+						</div>-->
 						
 
 						<div class="form-group ">

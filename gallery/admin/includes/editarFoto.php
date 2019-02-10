@@ -107,7 +107,7 @@ Close( $connection);
             <label for="enabled" class="col-lg-2 col-form-label">Activado</label>
              
               <div class="col-lg-3 text-lett">
-                <input type="checkbox"  id="enabled" name="enabled" <?php echo $enabled; ?>>
+                <input type="checkbox"  id="enabled" name="enabled" <?php echo $enabled; ?>>(Para desactivar dejar la casilla vacia)
             </div>
             
           </div>
@@ -115,13 +115,16 @@ Close( $connection);
 
 
           <br><br>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary" style="width:100%; height:20%">Enviar</button>
 
         </form>
 
-        <br><br>
+        <br><br><br>
+    <br>
+    <br>
+    <br>
       </div>
-      <div class="col-lg-2 text-left"></div>
+     
     </div>
 
   </div>

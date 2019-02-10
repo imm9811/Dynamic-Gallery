@@ -33,8 +33,13 @@
   }
 	.glyphicon-remove{
 		color:red;
-	}
-
+  }
+  
+    *{
+      margin: 0;
+      padding: 0;
+    }   
+   
   </style>
 
 </head>
@@ -72,20 +77,28 @@
 				foreach ( $rows as $row) 
 				{
 					echo '
-					<td>'.$row['id'].'</td>
-					<td>'.$row['tutor'].'</td>
+          <td>'.$row['id'].'</td>';
+
+          if(empty($row['tutor'])){
+            echo '<td>Sin autor</td>';
+          }
+          else{
+          echo '<td>'.$row['tutor'].'</td>';
+          }
+          echo '
+					
 					<td>'.$row['name'].'</td>
 					<td>'.date( "d/m/Y H:s:i", strtotime( $row['created'])).'</td>';
 					
 					if($row['enabled']==1){
 					
-					echo '<td class="text-center"><a href="home.php?page=editarFoto&enabled='.$row['enabled'].'"><span class="glyphicon glyphicon-certificate" style="color:green"></span></a></td>
+					echo '<td class="text-center"><span class="glyphicon glyphicon-certificate" style="color:green"></span></td>
 					
 					';
 				} 
 					
 					else{
-						echo '<td class="text-center"><a href="home.php?page=editarFotot&enabled='.$row['enabled'].'"><span class="glyphicon glyphicon-certificate" style="color:red"></span></a></td>
+						echo '<td class="text-center"><span class="glyphicon glyphicon-certificate" style="color:red"></span></td>
 					';
 				}
 					
@@ -109,5 +122,12 @@
     </div>
     
   </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark" style="bottom:5px">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018; Made by Ismael</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 </body>
 </html>
